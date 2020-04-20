@@ -1,16 +1,27 @@
-//
-//  main.m
-//  debug-objc
-//
-//  Created by Closure on 2018/12/4.
-//
+#include <Foundation/Foundation.h>
 
-#import <Foundation/Foundation.h>
+@interface Person : NSObject
+@property(copy, nonatomic) NSString *name;
+@property int age;
 
-int main(int argc, const char * argv[]) {
-    @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World! %@", [NSString class]);
-    }
-    return 0;
+- (void) printName;
+@end
+
+@implementation Person
+- (void) printName {
+  NSLog(@"%@", self.name);
+}
+@end
+
+int main() {
+
+
+  Person* p = [[Person alloc] init];
+  p.name = @"Muffin";
+  p.age = 44;
+
+
+  [p printName];
+
+  return [p age];
 }
